@@ -18,10 +18,10 @@ include_recipe 'nodejs' # required for precompiling/handling assets
 include_recipe 'ruby_build'
 include_recipe 'rbenv::system'
 
-rbenv_ruby   node['tippfuchs']['rbenv_ruby']
-rbenv_global node['tippfuchs']['rbenv_ruby']
+rbenv_ruby   node['tippfuchs']['rails']['rbenv_ruby']
+rbenv_global node['tippfuchs']['rails']['rbenv_ruby']
 
 rbenv_gem 'bundler' do
-  rbenv_version node['tippfuchs']['rbenv_ruby']
+  rbenv_version node['tippfuchs']['rails']['rbenv_ruby']
 end
 rbenv_rehash ''

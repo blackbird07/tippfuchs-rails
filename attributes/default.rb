@@ -1,1 +1,1 @@
-default['tippfuchs']['rbenv_ruby'] = '2.1.1'
+default['tippfuchs']['rails']['rbenv_ruby'] = '2.1.1'
