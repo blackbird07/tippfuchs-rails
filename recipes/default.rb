@@ -18,7 +18,11 @@ include_recipe 'nodejs' # required for precompiling/handling assets
 include_recipe 'ruby_build'
 include_recipe 'rbenv::system'
 
-rbenv_ruby   node['tippfuchs']['rails']['rbenv_ruby']
+rbenv_ruby   node['tippfuchs']['rails']['rbenv_ruby'] do
+  environment {
+    CONFIGURE_OPTS '--disable-install-rdoc'
+  }
+end
 rbenv_global node['tippfuchs']['rails']['rbenv_ruby']
 
 rbenv_gem 'bundler' do
